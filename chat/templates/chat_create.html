@@ -1,0 +1,21 @@
+<style>
+	body {background-color: powderblue;}
+	h3{ background-color: black; color: white; width: 100px; }
+	ul {font-size: 16px;  }
+	div{border: 1px solid; background-color: white; overflow: scroll; height: 365px;}
+</style>
+<center><strong><h3>chat room</h3></strong></center>
+
+<div>
+{% for i in object_list  %}
+
+<ul> {{i.user}}  : {{i.chat_field}} </ul>
+
+{% endfor %}
+</div>
+
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+{{ form.as_p }}
+
+<input type='submit' class="btn btn-info" value='SEND'/>
+</form>
